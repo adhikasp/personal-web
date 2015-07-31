@@ -20,7 +20,7 @@ plan.local(function(local) {
     local.log('Copy files to remote hosts');
     var filesToCopy = local.exec('git ls-files', {silent: true});
 
-    local.transfer(filesToCopy,  + prodDir);
+    local.transfer(filesToCopy, prodDir);
 });
 
 plan.remote(function(remote) {
