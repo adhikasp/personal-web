@@ -1,0 +1,21 @@
+{
+  "name": "personal-web",
+  "version": "0.1.0",
+  "homepage": "https://github.com/adhikasp/personal-web",
+  "authors": [
+    "adhikasp <adhika.setyap@gmail.com>"
+  ],
+  "description": "Adhika Personal web",
+  "main": "index.php",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
