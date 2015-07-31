@@ -3,7 +3,7 @@ var plan = require('flightplan');
 // configuration
 
 plan.target('production', {
-    host: 'adhikasetyap.me',
+    host: 'vanilla.adhikasetyap.me',
     username: 'dhika',
     agent: process.env.SSH_AUTH_SOCK
 });
@@ -24,6 +24,10 @@ plan.local(function(local) {
 
 plan.remote(function(remote) {
     remote.log('Move files to web root');
-    remote.sudo('cp -R /tmp/' + tmpDir + ' /var/www/adhikasetyap.me/public', {user: 'dhika'});
+    remote.sudo('cp -R /tmp/' + tmpDir + '/* /var/www/adhikasetyap.me/public', {user: 'dhika'});
     remote.rm('-rf /tmp/' + tmpDir);
+
+    remote.log('Install dependencies');
+    remote.sudo('npm --production install /var/www/adhikasetyap.me/public', {user: 'dhika'});
+    remote.sudo('bower --production install /var/www/adhikasetyap.me/public', {user: 'dhika'});
 });
