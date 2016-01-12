@@ -30,5 +30,5 @@ plan.remote(function(remote) {
 
     remote.log('Install dependencies');
     remote.sudo('npm --production --prefix ' + prodDir + ' install ' + prodDir, {user: 'dhika'});
-    remote.sudo('bower --production install ' + prodDir, {user: 'dhika'});
+    // remote.sudo('bower --production --config.interactive=false install ' + prodDir, {user: 'dhika'});
 });
